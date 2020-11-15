@@ -1,0 +1,49 @@
+.card-preview-container {
+  width: 95%;
+  height: 560px;
+  overflow: hidden;
+  & .card-preview {
+    text-align: center;
+    max-width: 95%;
+    position: relative;
+    overflow: hidden;
+    & .delete-text {
+      position: absolute;
+      bottom: 60px;
+      color: #000;
+      background: #eee;
+      opacity: 0.5;
+      left: 50%;
+      padding: 1;
+      padding: 0.5em;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+    & .text-area {
+      position: absolute;
+      z-index: 100;
+      cursor: move;
+      width: 50%;
+      overflow: auto;
+      & .text-value {
+        font-size: 2em;
+        color: #fff;
+        max-width: 300px !important;
+        min-width: 100px !important;
+        min-height: 2em !important;
+        width: 300px;
+      }
+      & .text-mover {
+        padding: 10px;
+        cursor: move;
+        z-index: 10;
+        background-color: #2196f3;
+        color: #fff;
+        width: 2em;
+      }
+    }
+    .card-preview-image {
+      -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.postcard-container {
+  display: inline-block;
+  padding: 0 0 0 15em;
+  border-right: 1px solid #eee;
+  width: 45%;
+  scroll-behavior: smooth;
+  & .list-container {
+    width: 367px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-left: 8em;
+    & .postcard-list-container {
+      display: inline-block;
+      padding: 1em;
+    }
+  }
+  & .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  & .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg) translate(0px, 1em);
+    margin-left: 21em;
+  }
+  
+  & .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg) translate(0px, -1em);
+    margin-left: -2px;
+  }
+  
+}
+.postcard-actions{
+    position: fixed;
+    display: inline-block;
+    padding: 5em;
+    & gelato-button {
+        display: block;
+        padding-top: 1em ;
+    }
+}

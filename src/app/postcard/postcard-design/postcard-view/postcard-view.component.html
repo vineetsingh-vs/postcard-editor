@@ -1,0 +1,30 @@
+<div class="postcard-container">
+    <postcard-preview
+    [edit]="edit" 
+    [imageSize]="imageSize" 
+    [rotationalState]="rotationalState" 
+    [zoomType]="zoomType"
+    [canvasHeight]="imageSize" 
+    [canvasWidth]="600" 
+    [imageUrl]="((postCards || [])[activeIndex] || {}).image"
+    [reset]="reset"
+    [undo]="undo"
+    >
+    </postcard-preview>
+    <div scroll #list="scroll" [scrollUnit]="50" class="list-container">
+        <div (click)="list.scroll(-1)" class="arrow right"></div>
+        <div *ngFor="let card of postCards;let i=index" (click)="activeIndex=i; rotationalState = 0 "
+            class="postcard-list-container">
+            <postcard-list [image]="card.image" [active]="i===activeIndex"></postcard-list>
+        </div>
+        <div (click)="list.scroll(1)" class="arrow  left"></div>
+    </div>
+</div>
+<div class="postcard-actions">
+    <gelato-button (action)="addText()" label="new text block"></gelato-button>
+    <gelato-button (action)="rotateImage()" label="rotate"></gelato-button>
+    <gelato-button (action)="zoomInImage()" label="zoom in"></gelato-button>
+    <gelato-button (action)="zoomOutImage()" label="zoom out"></gelato-button>
+    <gelato-button (action)="resetCard()" label="reset"></gelato-button>
+    <gelato-button (action)="undoChange()" label="undo"></gelato-button>
+</div>

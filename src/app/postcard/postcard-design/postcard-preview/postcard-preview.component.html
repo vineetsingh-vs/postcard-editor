@@ -1,0 +1,13 @@
+<div class="card-preview-container">
+    <div [@rotatedState]='state' #imageContainer [style.width.px]="canvasHeight" [style.height.px]="canvasHeight" class="card-preview">
+        <div *ngIf="!!drawItems && drawItems.length > 0"
+            [ngStyle]="{'left':drawItems[0].x0 * scale + 'px' , 'top': drawItems[0].y0  *scale + 'px'}"
+             (cdkDragStarted)="dragEvent($event)" (cdkDragEnded)="dragEvent($event)" cdkDrag class="text-area" #textArea>
+            <gelato-text-area [text]="value" (textChange)="textChanges($event)" *ngIf="edit; else text" ></gelato-text-area>
+            <ng-template #text>
+                <div class="text-value">{{value}}</div>
+            </ng-template>
+        </div>
+        <canvas  #canvas style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
+    </div>
+</div>
